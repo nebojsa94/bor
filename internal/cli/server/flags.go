@@ -131,11 +131,11 @@ func (c *Command) Flags(config *Config) *flagset.Flagset {
 		Default: c.cliConfig.Logging.Vmodule,
 		Group:   "Logging",
 	})
-	f.BoolFlag(&flagset.BoolFlag{
+	f.StringFlag(&flagset.StringFlag{
 		Name:    "vmtrace",
 		Usage:   "Name of tracer which should record internal VM operations (costly)",
 		Value:   &c.cliConfig.VMTrace,
-		Default: c.cliConfig.VMTrace,
+		Default: "",
 		Group:   "Logging",
 	})
 	f.StringFlag(&flagset.StringFlag{
