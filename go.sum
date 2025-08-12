@@ -1150,8 +1150,8 @@ github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d h1:vfofYNRScrDd
 github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d/go.mod h1:RRCYJbIwD5jmqPI9XoAFR0OcDxqUctll6zUj/+B4S48=
 github.com/tenderly/blockchain-proto v1.0.0 h1:f5V77CkgG9/oOWfK+fCUjCsnvWSm1Sr8D5LAA2XfbMs=
 github.com/tenderly/blockchain-proto v1.0.0/go.mod h1:yp/IkDpq4o6eeWNYPIsSwRUEqNGNV8NIZG1Eot2fZ3s=
-github.com/tenderly/live-tracer-ethereum v1.0.0 h1:WuouWOCMgosnvvyvH/pXR0B50e3ZfxTbzC5vZcpknH8=
-github.com/tenderly/live-tracer-ethereum v1.0.0/go.mod h1:VhSiRocQzrpcxXoRSrI0QyYQjdACr/pBZiSQkGmz+Jc=
+github.com/tenderly/live-tracer-ethereum v1.0.1-bor2 h1:99rZOs0EkkFl+5swtJxKZraBiWtFQTRvN7SfXZyr7Z8=
+github.com/tenderly/live-tracer-ethereum v1.0.1-bor2/go.mod h1:DuC0xyj9D39L0JBRY93ohQxiBa5ihPc3q+f7Z0eZrgc=
 github.com/tenderly/live-tracing-store v1.0.1-bor1 h1:TjkQ9cEWu+Uf4gBX5M1apmfwypt7Zyls/y6d6Y7qELI=
 github.com/tenderly/live-tracing-store v1.0.1-bor1/go.mod h1:rxoEpaeygIXSvnWw6lw7Cn6vvZ+Jh3oPLSmytwQkqyk=
 github.com/tendermint/go-amino v0.16.0 h1:GyhmgQKvqF82e2oZeuMSp9JTN0N09emoSZlb2lyGa2E=
