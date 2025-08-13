@@ -319,7 +319,7 @@ require (
 	github.com/spf13/viper v1.19.0 // indirect
 	github.com/streadway/amqp v1.1.0 // indirect
 	github.com/tenderly/blockchain-proto v1.0.0 // indirect
-	github.com/tenderly/live-tracing-store v1.0.1-bor1 // indirect
+	github.com/tenderly/live-tracing-store v1.0.0 // indirect
 	github.com/tendermint/go-amino v0.16.0 // indirect
 	github.com/tidwall/btree v1.7.0 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
