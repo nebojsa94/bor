@@ -17,6 +17,8 @@
 package vm
 
 import (
+	"time"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/state"
 	"github.com/ethereum/go-ethereum/core/stateless"
@@ -101,4 +103,9 @@ type StateDB interface {
 
 	// Finalise must be invoked at the end of a transaction
 	Finalise(bool)
+
+	// Needed for Bor Consensus
+	Copy() *state.StateDB
+	SetBalance(common.Address, *uint256.Int, tracing.BalanceChangeReason)
+	SetBorConsensusTime(time.Duration)
 }

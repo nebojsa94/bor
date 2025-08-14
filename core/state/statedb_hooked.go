@@ -18,6 +18,7 @@ package state
 
 import (
 	"math/big"
+	"time"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/stateless"
@@ -275,4 +276,16 @@ func (s *hookedStateDB) Finalise(deleteEmptyObjects bool) {
 			}
 		}
 	}
+}
+
+func (s *hookedStateDB) Copy() *StateDB {
+	return s.inner.Copy()
+}
+
+func (s *hookedStateDB) SetBalance(addr common.Address, val *uint256.Int, reason tracing.BalanceChangeReason) {
+	s.inner.SetBalance(addr, val, reason)
+}
+
+func (s *hookedStateDB) SetBorConsensusTime(time time.Duration) {
+	s.inner.BorConsensusTime = time
 }

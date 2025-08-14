@@ -1931,3 +1931,7 @@ func (s *StateDB) Witness() *stateless.Witness {
 func (s *StateDB) AccessEvents() *AccessEvents {
 	return s.accessEvents
 }
+
+func (s *StateDB) SetBorConsensusTime(time time.Duration) {
+	s.BorConsensusTime = time
+}

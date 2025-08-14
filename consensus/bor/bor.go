@@ -877,7 +877,7 @@ func (c *Bor) Prepare(chain consensus.ChainHeaderReader, header *types.Header) e
 
 // Finalize implements consensus.Engine, ensuring no uncles are set, nor block
 // rewards given.
-func (c *Bor) Finalize(chain consensus.ChainHeaderReader, header *types.Header, wrappedState vm.StateDB, body *types.Body) {
+func (c *Bor) Finalize(chain consensus.ChainHeaderReader, header *types.Header, state vm.StateDB, body *types.Body) {
 	headerNumber := header.Number.Uint64()
 	if body.Withdrawals != nil || header.WithdrawalsHash != nil {
 		return
@@ -888,7 +888,7 @@ func (c *Bor) Finalize(chain consensus.ChainHeaderReader, header *types.Header, 
 
 	// Extract the underlying state to access methods like `IntermediateRoot` and `Copy`
 	// required for bor consensus operations
-	state := wrappedState.(*state.StateDB)
+	//state := wrappedState.(*state.StateDB)
 
 	var (
 		stateSyncData []*types.StateSyncData
@@ -913,7 +913,7 @@ func (c *Bor) Finalize(chain consensus.ChainHeaderReader, header *types.Header, 
 			}
 		}
 
-		state.BorConsensusTime = time.Since(start)
+		state.SetBorConsensusTime(time.Since(start))
 	}
 
 	if err = c.changeContractCodeIfNeeded(headerNumber, state); err != nil {
@@ -941,7 +941,7 @@ func decodeGenesisAlloc(i interface{}) (types.GenesisAlloc, error) {
 	return alloc, nil
 }
 
-func (c *Bor) changeContractCodeIfNeeded(headerNumber uint64, state *state.StateDB) error {
+func (c *Bor) changeContractCodeIfNeeded(headerNumber uint64, state vm.StateDB) error {
 	for blockNumber, genesisAlloc := range c.config.BlockAlloc {
 		if blockNumber == strconv.FormatUint(headerNumber, 10) {
 			allocs, err := decodeGenesisAlloc(genesisAlloc)
@@ -1175,7 +1175,7 @@ func (c *Bor) Close() error {
 }
 
 func (c *Bor) checkAndCommitSpan(
-	state *state.StateDB,
+	state vm.StateDB,
 	header *types.Header,
 	chain core.ChainContext,
 ) error {
@@ -1330,7 +1330,7 @@ func (c *Bor) needToCommitSpan(currentSpan *span.Span, headerNumber uint64) bool
 func (c *Bor) FetchAndCommitSpan(
 	ctx context.Context,
 	newSpanID uint64,
-	state *state.StateDB,
+	state vm.StateDB,
 	header *types.Header,
 	chain core.ChainContext,
 ) error {
@@ -1421,7 +1421,7 @@ func (c *Bor) FetchAndCommitSpan(
 
 // CommitStates commit states
 func (c *Bor) CommitStates(
-	state *state.StateDB,
+	state vm.StateDB,
 	header *types.Header,
 	chain statefull.ChainContext,
 ) ([]*types.StateSyncData, error) {
