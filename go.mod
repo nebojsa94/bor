@@ -82,7 +82,6 @@ require (
 	github.com/stretchr/testify v1.10.0
 	github.com/supranational/blst v0.3.14
 	github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d
-	github.com/tenderly/live-tracer-ethereum v1.0.1-bor3
 	github.com/urfave/cli/v2 v2.27.5
 	github.com/xsleonard/go-merkle v1.1.0
 	go.opentelemetry.io/otel v1.34.0
@@ -318,8 +317,6 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.19.0 // indirect
 	github.com/streadway/amqp v1.1.0 // indirect
-	github.com/tenderly/blockchain-proto v1.0.0 // indirect
-	github.com/tenderly/live-tracing-store v1.0.0 // indirect
 	github.com/tendermint/go-amino v0.16.0 // indirect
 	github.com/tidwall/btree v1.7.0 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
